@@ -1,5 +1,7 @@
+// Dołączenie modułu Mongoose
 var mongoose = require('mongoose');
 
+// Utworzenie schematu danych
 var NoteSchema = new mongoose.Schema({
     title: String,
     note: String,

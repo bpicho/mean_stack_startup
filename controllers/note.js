@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+
+// Dołączenie modelu notatek
 var note = require('../models/note');
 
 module.exports = function(router) {
