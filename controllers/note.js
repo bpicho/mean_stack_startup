@@ -64,3 +64,17 @@ module.exports = function(router) {
 //res.send()	Send a response of various types.
 //res.sendFile	Send a file as an octet stream.
 //res.sendStatus()	Set the response status code and send its string representation as the response body
+
+//req.baseUrl
+//req.body
+//req.cookies
+//req.hostname
+//req.ip
+//req.originalUrl
+//req.params
+//req.path
+//req.protocol
+//req.query
+//req.route
+//req.secure
+//req.xhr
