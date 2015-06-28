@@ -1,5 +1,3 @@
-var mongoose = require('mongoose');
-
 // Dołączenie modelu notatek
 var note = require('../models/note');
 
@@ -17,7 +15,7 @@ module.exports = function(router) {
     /**
      * Create new note
      */
-    router.post('/note/', function (req, res) {
+    router.post('/note', function (req, res) {
         note.create(req.body, function (err, note) {
             if (err) return next(err);
             res.json(note);
@@ -51,6 +49,16 @@ module.exports = function(router) {
         note.findByIdAndRemove(req.params.note_id, req.body, function (err, note) {
             if (err) return next(err);
             res.json(note);
+        });
+    });
+
+    /**
+     * Delete all notes
+     */
+    router.delete('/notes', function (req, res) {
+        note.remove({}, function (err) {
+            if (err) return next(err);
+            res.json({"status":"done"});
         });
     });
 
