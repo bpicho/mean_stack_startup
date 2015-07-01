@@ -12,6 +12,9 @@ module.exports = function(router) {
         });
     });
 
+    /**
+     * Sample view using EJS
+     */
     router.get('/index', function (req, res) {
         res.render('index', { title: 'Express' });
     });
