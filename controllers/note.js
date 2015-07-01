@@ -23,6 +23,7 @@ module.exports = function(router) {
      * Create new note
      */
     router.post('/note', function (req, res) {
+        console.log(req.body);
         note.create(req.body, function (err, note) {
             if (err) return next(err);
             res.json(note);
