@@ -7,5 +7,12 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <p><b>Name:</b></p>
+    <ul>
+    <% for(var i=0; i<names.length; i++) {%>
+       <li><%= names[i] %></li>
+    <% } %>
+    </ul>
   </body>
 </html>
