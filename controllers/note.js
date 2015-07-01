@@ -12,6 +12,10 @@ module.exports = function(router) {
         });
     });
 
+    router.get('/index', function (req, res) {
+        res.render('index', { title: 'Express' });
+    });
+
     /**
      * Create new note
      */
