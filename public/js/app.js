@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('noteApp', ['ngRoute','notesService','wu.masonry']);
+    var app = angular.module('noteApp', ['ngRoute','notesService','wu.masonry','exampleDirectives']);
 
     app.config(['$routeProvider', function($routeProvider){
         $routeProvider
@@ -21,6 +21,7 @@
 
 
     }]);
+    
 
     app.controller('notesListCtrl', ['$scope','notes', function ($scope, notes) {
 
@@ -104,7 +105,7 @@
     }]);
 
 
-    app.controller('noteAdd', ['$scope','notes', '$location', '$http', function ($scope, notes, $location, $http) {
+    app.controller('noteAdd', ['$scope','notes', '$location', function ($scope, notes, $location) {
 
         $scope.formData = {
             priority: 'priority3'
@@ -119,7 +120,6 @@
 
     }
     ]);
-
 
 
 })();

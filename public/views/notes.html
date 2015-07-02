@@ -1,5 +1,4 @@
 <div>
-
     <div class="filters-container">
         <div>
             <span class="btn btn-danger" ng-click="changeOrder('priority')" ng-hide="(orderByProperty == 'priority') && (orderByDir == false)">Order from most important</span>
@@ -12,18 +11,25 @@
     <div class="notes-container">
         <div class="grid" >
             <div masonry masonry-options="{ gutter: 10 }">
-                <div
-                        ng-repeat="note in notes | orderBy: orderByProperty : orderByDir"
+                <div ng-repeat="note in notes | orderBy: orderByProperty : orderByDir"
                         class="masonry-brick grid-item {{note.priority}}">
 
-                    <h3><a href="#/note/{{note._id}}">{{note.title}}</a></h3>
+                    <!-- single note content -->
+
+                    <!--<h3><a href="#/note/{{note._id}}">{{note.title}}</a></h3>
                     <p>{{note.note}}</p>
                     <div class="delete col-md-12">
                         <span ng-click="deleteNote(note._id)" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </div>
                     <div>
                         {{note.created_at | date:'yyyy-MM-dd HH:mm:ss'}}
-                    </div>
+                    </div>-->
+
+                    <single-note></single-note>
+
+                    <!-- /single note content -->
+
+
                 </div>
             </div>
         </div>
@@ -32,14 +38,4 @@
 
 </div>
 
-<!--
-<script type="text/javascript">
-    setTimeout(function(){
-        $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth: 350,
-            gutter: 10
-        });
-    },500)
 
-</script>-->

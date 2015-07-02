@@ -2,7 +2,7 @@
 
     var app = angular.module('notesService', []);
 
-    app.factory('notes', ['$http','$location', function($http, $location){
+    app.factory('notes', ['$http', function($http){
 
         var _postNote = function (formData, success) {
 
