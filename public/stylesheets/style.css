@@ -6,3 +6,72 @@ body {
 a {
   color: #00B7FF;
 }
+
+.grid-item {
+    width: 350px;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    border: 2px #000 solid;
+    border-radius: 5px;
+    background: #31b0d5;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.grid-item h3 {
+    margin-top: 5px;
+}
+
+.grid-item a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.grid-item a:hover {
+    color: #f1f1f1;
+}
+
+.grid-item--width2 {
+    width: 600px;
+}
+
+.grid-item-50 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.grid-item.priority4 {
+    background: #058855;
+}
+
+.grid-item.priority3 {
+    background: #135888;
+}
+
+.grid-item.priority2 {
+    background: #ff8f17;
+}
+
+.grid-item.priority1 {
+    background: red;
+}
+
+.notes-container {
+    margin: 50px auto;
+}
+
+div.delete {
+    margin: 5px 0 0 0;
+    text-align: right;
+    font-size: 20px;
+}
+
+div.delete span {
+    cursor: pointer;
+    color: #fff;
+}
+
+form {
+    overflow: hidden;
+    padding: 10px 0;
+}

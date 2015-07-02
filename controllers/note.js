@@ -12,6 +12,10 @@ module.exports = function(router) {
         });
     });
 
+    router.get('/', function (req, res) {
+        res.render('index', { title: 'Express' });
+    });
+
     /**
      * Create new note
      */
@@ -45,7 +49,7 @@ module.exports = function(router) {
     /**
      * Delete note
      */
-    router.delete('/note/note_id', function (req, res) {
+    router.delete('/note/:note_id', function (req, res) {
         note.findByIdAndRemove(req.params.note_id, req.body, function (err, note) {
             if (err) return next(err);
             res.json(note);
