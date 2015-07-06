@@ -1,17 +1,32 @@
 <div>
-    <div class="filters-container">
-        <div>
-            <span class="btn btn-danger" ng-click="changeOrder('priority')" ng-hide="(orderByProperty == 'priority') && (orderByDir == false)">Order from most important</span>
-            <span class="btn btn-success" ng-click="changeOrder('priority')" ng-hide="(orderByProperty == 'priority') && (orderByDir == true)">Order from less important</span>
+    <div class="row">
+        <div class="filters-container col-md-5">
+            <div class="form-group clearfix">
+                <label for="title">Note title</label>
+                <input ng-model="filterBy.title" name="title" type="text" class="form-control"
+                       id="title" placeholder="Enter note title" >
+
+            </div>
+            <div class="form-group clearfix">
+                <label for="text">Note title</label>
+                <input ng-model="filterBy.note" name="text" type="text" class="form-control"
+                       id="text" placeholder="Enter note text" >
+
+            </div>
+            <div>
+                <span class="btn btn-danger" ng-click="changeOrder('priority')" ng-hide="(orderByProperty == 'priority') && (orderByDir == false)">Order from most important</span>
+                <span class="btn btn-success" ng-click="changeOrder('priority')" ng-hide="(orderByProperty == 'priority') && (orderByDir == true)">Order from less important</span>
+
+            </div>
 
         </div>
-
     </div>
+
 
     <div class="notes-container">
         <div class="grid" >
-            <div masonry masonry-options="{ gutter: 10 }">
-                <div ng-repeat="note in notes | orderBy: orderByProperty : orderByDir"
+            <div masonry masonry-options="{ gutter: 10, transitionDuration: '1s' }">
+                <div ng-repeat="note in notes | filter: filterBy | orderBy: orderByProperty : orderByDir"
                         class="masonry-brick grid-item {{note.priority}}">
 
                     <!-- single note content -->

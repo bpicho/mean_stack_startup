@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module('notesService', []);
+    var app = angular.module('notesServices', []);
 
     app.factory('notes', ['$http', function($http){
 

@@ -1,0 +1,155 @@
+
+<div class="col-md-6">
+    <div class="form-group clearfix">
+        <label>Imię</label>
+        <input type="text" ng-model="data.imie" class="form-control"/>
+    </div>
+    <div class="form-group clearfix">
+        <label>Nazwisko</label>
+        <input type="text" ng-model="data.nazwisko" class="form-control"/>
+    </div>
+    <div class="form-group clearfix">
+        <label>Email</label>
+        <input type="email" ng-model="data.email" class="form-control"/>
+    </div>
+
+    <div class="well">
+        Imię: {{data.imie}}<br/>
+        Nazwisko: {{data.nazwisko}}<br/>
+        Email: {{data.email| maskEmail : 5 : '*' }}
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <span class="btn btn-default" ng-click="consoleLogData()">Console.log(data)</span>
+            <span class="btn btn-default" ng-click="changeData()">Change data</span>
+            <br/>
+            <br/>
+            <br/>
+            <a class="cb" href="http://google.com">
+                <span>
+                    <span>
+                        <span>
+                            <span>
+                                <span>
+                                    <span>
+                                        custom button
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </span>
+                </span>
+            </a>
+
+            <funny-button atrybut="http://google.com">custom button</funny-button>
+        </div>
+
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-12">
+            <form name="note_add_form" id="note_add_form" novalidate ng-submit="note_add_form.$valid">
+                <fieldset>
+                    <div class="form-group clearfix">
+                        <label for="email">Email</label>
+                        <input ng-model="formData.uEmail"
+                               name="email"
+                               type="email"
+                               class="form-control"
+                               id="email"
+                               placeholder="Podaj email"
+                               required="required">
+
+                        <div ng-show="note_add_form.$submitted || note_add_form.email.$touched" class="error-msg">
+                            <span ng-show="note_add_form.email.$error.required">
+                              Email jest wymagany
+                            </span>
+                            <span ng-show="note_add_form.email.$error.email">
+                              Nieprawidłowy adres email
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group clearfix">
+                        <label for="email">Kod pocztowy</label>
+                        <input ng-model="formData.uZip"
+                               name="zip"
+                               type="text"
+                               class="form-control"
+                               id="zip"
+                               pattern="\d{2}-\d{3}"
+                               placeholder="Podaj kod pocztowy"
+                               required="required">
+
+                        <div ng-show="note_add_form.$submitted || note_add_form.zip.$touched" class="error-msg">
+                            <span ng-show="note_add_form.zip.$error.required">
+                              Kod pocztowy jest wymagany
+                            </span>
+                            <span ng-show="note_add_form.zip.$error.pattern">
+                              Podaj kod pocztowy w formacie 12-345
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group clearfix">
+                        <label for="email">Minimalna i maksymalna wartość, pole typu number</label>
+                        <input ng-model="formData.uNumber"
+                               name="number"
+                               type="number"
+                               class="form-control"
+                               id="number"
+                               min="10"
+                               max="100"
+                               placeholder="Podaj cyfre z przedziału 10-100"
+                               required="required">
+
+                        <div ng-show="note_add_form.$submitted || note_add_form.number.$touched" class="error-msg">
+                            <span ng-show="note_add_form.number.$error.required">
+                              Pole jest wymagane
+                            </span>
+                            <span ng-show="note_add_form.number.$error.number">
+                              Podaj liczbę
+                            </span>
+                            <span ng-show="note_add_form.number.$error.min || note_add_form.number.$error.max">
+                              Podaj liczbę z przedziału 10-100
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group clearfix">
+                        <label for="email">Minimalna i maksymalna data, pole typu data</label>
+                        <input ng-model="formData.udata"
+                               name="date"
+                               type="date"
+                               class="form-control"
+                               id="date"
+                               min="2000-01-01"
+                               max="2010-01-01"
+                               required="required">
+
+                        <div ng-show="note_add_form.$submitted || note_add_form.date.$touched" class="error-msg">
+                            <span ng-show="note_add_form.date.$error.required">
+                              Pole jest wymagane
+                            </span>
+                            <span ng-show="note_add_form.date.$error.date">
+                              Podaj datę
+                            </span>
+                            <span ng-show="note_add_form.date.$error.min || note_add_form.date.$error.max">
+                              Podaj datę z przedziału 2000-01-01 - 2010-01-01
+                            </span>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+
+                <input type="submit" class="btn btn-lg btn-success" value="Save this note">
+
+
+            </form>
+        </div>
+    </div>
+
+</div>

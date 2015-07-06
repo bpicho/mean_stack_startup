@@ -3,24 +3,34 @@
         <fieldset>
             <div class="form-group clearfix">
                 <label for="title">Note title</label>
-                <input ng-model="formData.title" name="title" type="text" class="form-control"
-                       id="title" placeholder="Enter title" required="required">
+                <input ng-model="formData.title"
+                       name="title"
+                       type="text"
+                       class="form-control"
+                       id="title"
+                       placeholder="Enter title"
+                       required="required">
 
-                <div ng-show="note_add_form.$submitted || note_add_form.title.$touched">
-                <span ng-show="note_add_form.title.$error.required">
-                  Title is required
-                </span>
+                <div ng-show="note_add_form.$submitted || note_add_form.title.$touched" class="error-msg">
+                    <span ng-show="note_add_form.title.$error.required">
+                      Title is required
+                    </span>
                 </div>
             </div>
 
             <div class="form-group clearfix">
                 <label for="note">Text</label>
-                <textarea required="required" name="note" id="note" ng-model="formData.note"
-                          class="form-control"></textarea>
-                <div ng-show="note_add_form.$submitted || note_add_form.note.$touched">
-                <span ng-show="note_add_form.note.$error.required">
-                  text is required
-                </span>
+                <textarea class="form-control"
+                          name="note"
+                          id="note"
+                          ng-model="formData.note"
+                          required="required">
+
+                </textarea>
+                <div ng-show="note_add_form.$submitted || note_add_form.note.$touched" class="error-msg">
+                    <span ng-show="note_add_form.note.$error.required">
+                      Text is required
+                    </span>
                 </div>
             </div>
 

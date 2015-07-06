@@ -58,6 +58,11 @@ a {
 
 .notes-container {
     margin: 50px auto;
+    min-height: 1000px;
+}
+
+.error-msg {
+    color: red !important;
 }
 
 div.delete {
@@ -74,4 +79,34 @@ div.delete span {
 form {
     overflow: hidden;
     padding: 10px 0;
+}
+
+.cb {
+    display: inline-block;
+    border: 2px #ff4012 solid;
+    color: #000;
+    background: #baff0f;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cb span {
+    display: inline-block;
+    border: 2px #ff6b00 solid;
+}
+
+.cb span span {
+    border: 2px #ffa600 solid;
+}
+
+.cb span span span {
+    border: 2px #ffc500 solid;
+}
+
+.cb span span span span {
+    border: 2px #eaff00 solid;
+}
+
+.cb span span span span span {
+    border: 2px #d4ff00 solid;
 }
