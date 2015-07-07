@@ -17,6 +17,20 @@
             });
         };
 
+        var _getAllNotes= function (success, error) {
+
+            success = success||function(){};
+            error = error||function(){};
+
+            $http.get('notes/')
+                .success(function (data) {
+                    success(data);
+                })
+                .error(error);
+
+        };
+
+
         var _updateNote = function (note_id, formData, success) {
 
             success = success||function(){};
@@ -36,19 +50,6 @@
             error = error||function(){};
 
             $http.get('note/'+note_id)
-                .success(function (data) {
-                    success(data);
-                })
-                .error(error);
-
-        };
-
-        var _getAllNotes= function (success, error) {
-
-            success = success||function(){};
-            error = error||function(){};
-
-            $http.get('notes/')
                 .success(function (data) {
                     success(data);
                 })

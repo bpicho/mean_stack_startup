@@ -10,13 +10,14 @@
             email: 'jan.kowalski@mail.com'
         };
 
+
+
         $scope.changeData = function(){
             $scope.data = {
                 imie: 'Paweł',
                 nazwisko: 'Nowak',
                 email: 'pawel.nowak@mail.com'
             };
-            console.log($scope.data);
         }
 
         $scope.consoleLogData = function(){

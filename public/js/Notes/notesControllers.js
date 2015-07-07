@@ -2,6 +2,23 @@
 
     var app = angular.module('notesControllers', ['notesServices']);
 
+    app.controller('noteAdd', ['$scope','notes', '$location', function ($scope, notes, $location) {
+
+        $scope.formData = {
+            priority: 'priority3'
+        };
+
+        $scope.addNewNote = function () {
+            notes.postNote($.param($scope.formData), function () {
+                $.growl.notice({title: "Good Job!", message: "You've successfully added note!"});
+                $location.path('/notes' );
+            });
+        };
+
+    }
+    ]);
+
+
     app.controller('notesListCtrl', ['$scope','notes', function ($scope, notes) {
 
         $scope.notes = [];
@@ -80,21 +97,7 @@
     }]);
 
 
-    app.controller('noteAdd', ['$scope','notes', '$location', function ($scope, notes, $location) {
 
-        $scope.formData = {
-            priority: 'priority3'
-        };
-
-        $scope.addNewNote = function () {
-            notes.postNote($.param($scope.formData), function () {
-                $.growl.notice({title: "Good Job!", message: "You've successfully added note!"});
-                $location.path('/notes' );
-            });
-        };
-
-    }
-    ]);
 
 
 })();

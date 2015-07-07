@@ -1,5 +1,20 @@
 
 <div class="col-md-6">
+
+    <div class="well">
+        <p ng-init="var1 = 12; var2 = 124">
+            {{var1 + var2 | currency}}<br/>
+        </p>
+        <p ng-init="sampleText = 'Lorem ipsum dolor sit amet'">
+            {{ sampleText | limitTo : 40 }}
+        </p>
+        <p ng-init="sampleDate = '2015-07-02T15:56:17.722Z'">
+            {{ sampleDate | date : 'yyyy-MM-dd' }}
+        </p>
+
+    </div>
+    <hr/>
+
     <div class="form-group clearfix">
         <label>Imię</label>
         <input type="text" ng-model="data.imie" class="form-control"/>
@@ -16,7 +31,8 @@
     <div class="well">
         Imię: {{data.imie}}<br/>
         Nazwisko: {{data.nazwisko}}<br/>
-        Email: {{data.email| maskEmail : 5 : '*' }}
+        Email: {{data.email}}<br/>
+       <!-- Email: {{data.email| maskEmail : 5 : '*' }}-->
     </div>
 
 
@@ -43,7 +59,7 @@
                 </span>
             </a>
 
-            <funny-button atrybut="http://google.com">custom button</funny-button>
+            <funny-button atrybut="http://google.com">ng transclude</funny-button>
         </div>
 
     </div>

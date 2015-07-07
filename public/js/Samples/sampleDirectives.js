@@ -10,7 +10,6 @@
             },
             template: '<a class="cb" href="{{atrybut}}"><span><span><span><span><span ng-transclude></span></span></span></span></span></a>'
         };
-
     });
 
 })();
