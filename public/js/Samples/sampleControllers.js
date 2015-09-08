@@ -16,11 +16,11 @@
                 nazwisko: 'Nowak',
                 email: 'pawel.nowak@mail.com'
             };
-        }
+        };
 
         $scope.consoleLogData = function(){
             console.log($scope.data);
-        }
+        };
 
     }
     ]);

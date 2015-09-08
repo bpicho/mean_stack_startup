@@ -50,16 +50,11 @@
         //sorting
 
         $scope.orderByProperty = 'created_at';
-        $scope.orderByDir = false;
+        $scope.orderByDir = true;
 
-        $scope.changeOrder = function(sortType){
-
-            if($scope.orderByProperty == sortType) {
-                $scope.orderByDir = !$scope.orderByDir ;
-            }else{
-                $scope.orderByProperty = sortType;
-                $scope.orderByDir = false;
-            }
+        $scope.changeOrder = function(sortType, orderDirection){
+            $scope.orderByProperty = sortType;
+            $scope.orderByDir = orderDirection;
         };
 
     }]);

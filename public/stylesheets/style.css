@@ -61,6 +61,10 @@ a {
     min-height: 1000px;
 }
 
+textarea {
+    min-height: 100px;
+}
+
 .error-msg {
     color: red !important;
 }
